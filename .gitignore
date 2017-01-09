@@ -17,5 +17,6 @@ ehthumbs.db
 Thumbs.db
 
 dist/
+.tmp/
 node_modules/
 public/vendor/
