@@ -9,9 +9,9 @@ var helmet = require('helmet');
 module.exports = function(){
 	var app = express();
 	app.set('port',3000);
-	app.use(express.static('./public'));
 	app.set('view engine','ejs');
 	app.set('views','./app/views');
+	app.use(express.static('./public'));
 
 	app.use(bodyParser.urlencoded({extended: true}));
 	app.use(bodyParser.json());
@@ -31,7 +31,7 @@ module.exports = function(){
 	app.use(helmet.xssFilter());
 	app.use(helmet.noSniff());
 	app.disable('x-powered-by');
-	app.use(helmet());
+	//app.use(helmet());
 
 	load('models',{cwd:'app'})
 		.then('controllers')
